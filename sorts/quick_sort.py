@@ -12,7 +12,7 @@ python quick_sort.py
 from __future__ import print_function
 
 
-def quick_sort(collection):
+def quick_sort(ARRAY):
     """Pure implementation of quick sort algorithm in Python
 
     :param collection: some mutable ordered collection with heterogeneous
@@ -29,14 +29,14 @@ def quick_sort(collection):
     >>> quick_sort([-2, -5, -45])
     [-45, -5, -2]
     """
-    length = len(collection)
-    if length <= 1:
-        return collection
+    ARRAY_LENGTH = len(ARRAY)
+    if( ARRAY_LENGTH <= 1):
+        return ARRAY
     else:
-        pivot = collection[0]
-        greater = [element for element in collection[1:] if element > pivot]
-        lesser = [element for element in collection[1:] if element <= pivot]
-        return quick_sort(lesser) + [pivot] + quick_sort(greater)
+        PIVOT = ARRAY[0]
+        GREATER = [ element for element in ARRAY[1:] if element > PIVOT ]
+        LESSER = [ element for element in ARRAY[1:] if element <= PIVOT ]
+        return quick_sort(LESSER) + [PIVOT] + quick_sort(GREATER)
 
 
 if __name__ == '__main__':
